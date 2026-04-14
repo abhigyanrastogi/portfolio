@@ -1,0 +1,34 @@
+:root {
+  --background: rgb(252, 245, 184);
+  --surface: rgb(180, 205, 147);
+  --accent: rgb(66, 122, 91);
+  --text: rgb(64, 63, 63);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(28, 35, 54);
+    --surface: rgb(40, 57, 108);
+    --accent: rgb(181, 225, 139);
+    --text: rgb(240, 255, 194);
+  }
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+.bg-surface {
+  background-color: var(--surface);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.border-surface {
+  border-color: var(--surface) !important;
+}
+.border-accent {
+  border-color: var(--accent) !important;
+}
+body {
+  background-color: var(--background);
+  color: var(--text);
+}

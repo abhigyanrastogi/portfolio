@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="black"/>
+  <rect width="32" height="32" rx="8" fill="rgb(252, 245, 184)"/>
   
   <text x="16" y="23"
         text-anchor="middle"
         font-size="25"
         font-weight="700"
         font-family="system-ui, sans-serif"
-        fill="white">
+        fill="rgb(64, 63, 63)">
     ar
   </text>
 </svg>
