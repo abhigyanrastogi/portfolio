@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Hero from "./Hero";
+import NavBar from "./NavBar";
 
 const HeroNavbar = () => {
   const { scrollY } = useScroll();
@@ -21,7 +22,7 @@ const HeroNavbar = () => {
         }}
         className="position-fixed w-100 bg-surface"
       >
-        <h1>NAV BAR</h1>
+        <NavBar />
       </motion.div>
       <motion.div
         style={{

@@ -1,1 +1,9 @@
-
+.nav-link {
+  color: var(--text);
+}
+.nav-link:hover {
+  color: var(--accent);
+}
+.nav-link.active {
+  color: var(--accent);
+}
