@@ -10,7 +10,7 @@ const Hero = () => {
             <h2 className="display-4">Software Engineer</h2>
           </div>
           <div className="d-lg-none text-center pb-4">
-            <h1 className="display-4">Abhigyan Rastogi</h1>
+            <h1 className="display-4 text-nowrap">Abhigyan Rastogi</h1>
             <h2 className="display-6">Software Engineer</h2>
           </div>
         </div>
