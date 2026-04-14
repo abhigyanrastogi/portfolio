@@ -4,6 +4,9 @@
 .nav-link:hover {
   color: var(--accent);
 }
-.nav-link.active {
+.nav-link:focus {
   color: var(--accent);
+}
+.nav-link.active {
+  color: var(--accent) !important;
 }

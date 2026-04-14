@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 const HeroNavbar = () => {
   const { scrollY } = useScroll();
 
-  const scrollUpperLimit = 400; // Adjust this value to control when the animation starts
+  const scrollUpperLimit = 100; // Adjust this value to control when the animation starts
 
   const heroOpacity = useTransform(scrollY, [0, scrollUpperLimit], [1, 0]);
   const heroY = useTransform(scrollY, [0, scrollUpperLimit], [0, -50]);
@@ -19,6 +19,8 @@ const HeroNavbar = () => {
         style={{
           opacity: navOpacity,
           y: navY,
+          pointerEvents: "auto",
+          zIndex: 1000,
         }}
         className="position-fixed w-100 bg-surface"
       >
