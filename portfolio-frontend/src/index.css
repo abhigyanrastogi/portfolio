@@ -6,10 +6,10 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(28, 35, 54);
-    --surface: rgb(40, 57, 108);
-    --accent: rgb(181, 225, 139);
-    --text: rgb(240, 255, 194);
+    --background: rgb(32, 32, 32);
+    --surface: rgb(45, 90, 70);
+    --accent: rgb(180, 205, 147);
+    --text: rgb(245, 245, 245);
   }
 }
 
