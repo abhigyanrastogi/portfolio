@@ -5,10 +5,10 @@ import NavBar from "./NavBar";
 const HeroNavbar = () => {
   const { scrollY } = useScroll();
 
-  const scrollUpperLimit = 100; // Adjust this value to control when the animation starts
+  const scrollUpperLimit = window.innerHeight * 0.6; // Adjust this value to control when the animation starts
 
   const heroOpacity = useTransform(scrollY, [0, scrollUpperLimit], [1, 0]);
-  const heroY = useTransform(scrollY, [0, scrollUpperLimit], [0, -50]);
+  const heroY = useTransform(scrollY, [0, scrollUpperLimit], [0, 150]);
 
   const navOpacity = useTransform(scrollY, [0, scrollUpperLimit], [0, 1]);
   const navY = useTransform(scrollY, [0, scrollUpperLimit], [-50, 0]);

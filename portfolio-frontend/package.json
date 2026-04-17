@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.0",
     "bootstrap": "^5.3.8",
     "bootstrap-css": "^4.0.0-alpha.5",
     "framer-motion": "^12.38.0",

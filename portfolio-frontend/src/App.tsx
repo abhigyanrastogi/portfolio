@@ -1,13 +1,13 @@
 import "./App.css";
 import HeroNavbar from "./components/HeroNavbar";
+import ShowCase from "./components/ShowCase";
 
 function App() {
   return (
     <>
       <HeroNavbar />
-      <div style={{ height: "150vh" }}>
-        <p>content</p>
-      </div>
+      <ShowCase />
+      <div className="vh-100"></div>
     </>
   );
 }

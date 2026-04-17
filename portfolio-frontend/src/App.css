@@ -10,3 +10,12 @@
 .nav-link.active {
   color: var(--accent) !important;
 }
+.tech-list-item {
+  width: 120px;
+  transition: transform 0.3s ease;
+  filter: grayscale(60%);
+}
+.tech-list-item:hover {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
