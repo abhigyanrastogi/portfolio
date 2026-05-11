@@ -1,27 +1,43 @@
-name: Deploy Website
+name: Deploy Portfolio Website
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # Triggers deployment when you push to the main branch
 
 permissions:
   id-token: write # Required for requesting the JWT from GitHub
   contents: read  # Required for actions/checkout
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use the version matching your project
+
+      - name: Install dependencies and Build
+        run: |
+          npm install
+          npm run build # Generates the 'dist' folder
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::329068432608:role/github-actions-invalidate-cloudfront-upload-s3 # Replace with your Role ARN
-          aws-region: us-east-1 # Replace with your region
+          # Use your exact Role ARN and Region
+          role-to-assume: arn:aws:iam::329068432608:role/github-actions-invalidate-cloudfront-upload-s3
+          aws-region: us-east-1
 
       - name: Sync S3
-        run: aws s3 sync . s3://abhigyanchandrarastogi-portfolio --delete
+        # Syncs contents of ./dist to the bucket root and deletes orphaned files
+        run: aws s3 sync ./dist s3://abhigyanchandrarastogi-portfolio --delete
 
       - name: CloudFront Invalidation
+        # Refresh the cache so the new build shows up immediately
+        # Replace YOUR_DISTRIBUTION_ID with your actual ID
         run: aws cloudfront create-invalidation --distribution-id E344VXPUM5BXKM --paths "/*"
