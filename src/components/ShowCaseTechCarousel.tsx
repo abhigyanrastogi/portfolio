@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 type Props = {
   techlist: {
@@ -8,7 +9,8 @@ type Props = {
 };
 
 const ShowCaseTechCarousel = ({ techlist }: Props) => {
-  const duplicatedTechList = [...techlist, ...techlist]; // Duplicate the list for seamless scrolling
+  const duplicatedTechList = [...techlist, ...techlist];
+  const [isPaused, setIsPaused] = useState(false);
   return (
     <>
       <div className="overflow-hidden">
@@ -17,6 +19,11 @@ const ShowCaseTechCarousel = ({ techlist }: Props) => {
             className="d-flex gap-4"
             animate={{ x: ["0%", "-100%"] }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            style={{
+              animationPlayState: isPaused ? "paused" : "running",
+            }}
           >
             {duplicatedTechList.map((skill, index) => (
               <div key={index}>
