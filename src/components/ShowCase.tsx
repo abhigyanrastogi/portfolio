@@ -8,6 +8,7 @@ import pysparkIcon from "../assets/icons/pyspark.svg";
 import sqlIcon from "../assets/icons/sql.svg";
 import mongoIcon from "../assets/icons/mongodb.svg";
 import ShowCaseTechCarousel from "./ShowCaseTechCarousel";
+import { ShowCaseProjectCarousel } from "./ShowCaseProjectCarousel";
 
 const ShowCase = () => {
   type TechItem = {
@@ -39,6 +40,9 @@ const ShowCase = () => {
         <div className="row">
           <div className="col-12">
             <h1 className="display-4">Projects</h1>
+          </div>
+          <div className="col-12">
+            <ShowCaseProjectCarousel />
           </div>
         </div>
       </div>
