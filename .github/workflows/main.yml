@@ -35,7 +35,7 @@ jobs:
 
       - name: Sync S3
         # Syncs contents of ./dist to the bucket root and deletes orphaned files
-        run: aws s3 sync ./dist s3://abhigyanchandrarastogi-portfolio --delete
+        run: aws s3 sync ./dist s3://abhigyanchandrarastogi-portfolio/portfolio --delete
 
       - name: CloudFront Invalidation
         # Refresh the cache so the new build shows up immediately
