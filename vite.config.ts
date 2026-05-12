@@ -4,7 +4,7 @@ import { federation } from "@module-federation/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/portfolio/",
   preview: {
     port: 5173,
     cors: true,
