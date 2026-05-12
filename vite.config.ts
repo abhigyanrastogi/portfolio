@@ -1,18 +1,25 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { federation } from "@module-federation/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:"/portfolio",
+  base: "/",
+  preview: {
+    port: 5173,
+    cors: true,
+  },
   plugins: [
     react(),
     federation({
-      name: 'portfolio_app',
+      name: "portfolio_app",
       remotes: {
-        pingPongRemote: '/projects/ping-pong/assets/remoteEntry.js',
+        pingPongRemote:{
+          type: "module",
+          name: "pingPongRemote",
+          entry: "http://localhost:5174/remoteEntry.js",
+        }
       },
-      shared: ['react', 'react-dom'],
     }),
   ],
-})
+});

@@ -13,6 +13,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.3.0",
+    "@module-federation/vite": "^1.15.4",
     "bootstrap": "^5.3.8",
     "bootstrap-css": "^4.0.0-alpha.5",
     "framer-motion": "^12.38.0",
@@ -21,7 +22,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
-    "@originjs/vite-plugin-federation": "^1.4.1",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
