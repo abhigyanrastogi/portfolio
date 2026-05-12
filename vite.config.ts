@@ -17,7 +17,7 @@ export default defineConfig({
         pingPongRemote:{
           type: "module",
           name: "pingPongRemote",
-          entry: "http://localhost:5174/remoteEntry.js",
+          entry: "/projects/ping-pong/remoteEntry.js",
         }
       },
     }),
